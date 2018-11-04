@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "wcastand <wcastand@gmail.com> (https://github.com/wcastand)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "next": "^7.0.2",
+    "react": "16.7.0-alpha.0 - next",
+    "react-dom": "16.7.0-alpha.0 - next"
+  }
 }
