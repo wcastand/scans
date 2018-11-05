@@ -43,6 +43,10 @@ const Controls = styled('div')`
   align-items: center;
 `
 
+const ChapInput = styled(Input)`
+  max-width: 60px;
+`
+
 export default ({ scan: { id, name, uri, chapter } }) => {
   const [chap, setChap] = useState(chapter)
 
@@ -55,7 +59,7 @@ export default ({ scan: { id, name, uri, chapter } }) => {
       chapter
     }
   }`
-  useEffect(() => client.request(query, { id, scan: { chapter: chap } }), [chap])
+  useEffect(() => client.request(query, { id, scan: { chapter: parseInt(chap) } }), [chap])
 
   return (
     <Item>
@@ -67,7 +71,7 @@ export default ({ scan: { id, name, uri, chapter } }) => {
       </Name>
       <Controls>
         <Button text="-" onClick={down} />
-        <Input align="center" value={chap} onChange={e => setChap(e.target.value)} />
+        <ChapInput align="center" value={chap} onChange={e => setChap(e.target.value)} />
         <Button text="+" onClick={up} />
       </Controls>
     </Item>
