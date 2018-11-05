@@ -1,9 +1,9 @@
 import styled from 'react-emotion'
 
 export default styled('input')`
-  width: 24px;
-  font-size: 14px;
+  flex: 1;
+  font-size: 15px;
   border: none;
   outline: none;
-  text-align: center;
+  text-align: ${props => (props.align ? props.align : 'left')};
 `

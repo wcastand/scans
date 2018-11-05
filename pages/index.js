@@ -7,6 +7,7 @@ import useGraphQL from '../client'
 import Layout from '../c/layout'
 import List from '../c/list'
 import Scan from '../c/scan'
+import NewScan from '../c/newscan'
 
 const query = `{ allScans { id name uri chapter} }`
 
@@ -27,6 +28,11 @@ injectGlobal`
     background: #FFF url("/static/pattern.png") repeat fixed center;
     background-size: 35%;
   }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
 `
 
 export default () => {
@@ -39,6 +45,7 @@ export default () => {
             {data.allScans.map(scan => (
               <Scan scan={scan} key={scan.id} />
             ))}
+            <NewScan />
           </List>
         )}
       </Suspense>

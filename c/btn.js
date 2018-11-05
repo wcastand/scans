@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'react-emotion'
 
 const Del = styled('button')`
-  width: 24px;
+  width: 40px;
   min-height: 100%;
   outline: none;
   border: none;

@@ -9,9 +9,9 @@ type Scan {
 }
 
 input ScanInput {
-  name: String!
-  uri: String!
-  chapter: Int!
+  name: String
+  uri: String
+  chapter: Int
 }
 
 type Query {
@@ -21,5 +21,6 @@ type Query {
 
 type Mutation {
   createScan(input: ScanInput): Scan
+  updateScan(id: ID, scan: ScanInput): Scan
 }
 `)

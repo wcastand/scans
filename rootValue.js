@@ -10,10 +10,10 @@ db.defaults({ scans: [] }).write()
 
 const queries = {
   allScans: () => db.get('scans').value(),
-  getScan: id =>
+  getScan: ({ id }) =>
     db
       .get('scans')
-      .find(id)
+      .find({ id })
       .value(),
 }
 
@@ -27,6 +27,16 @@ const mutations = {
       .push(scan)
       .write()
     return scan
+  },
+  updateScan: ({ id, scan }) => {
+    db.get('scans')
+      .find({ id })
+      .assign(scan)
+      .write()
+    return db
+      .get('scans')
+      .find({ id })
+      .value()
   },
 }
 

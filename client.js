@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
-import { request } from 'graphql-request'
+import { request, GraphQLClient } from 'graphql-request'
 import 'isomorphic-fetch'
+
+export const client = new GraphQLClient('/api')
 
 const useGraphQL = (query, data) => {
   const [state, setState] = useState({ loading: true })
