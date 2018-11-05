@@ -4,10 +4,30 @@
   "main": "index.js",
   "author": "wcastand <wcastand@gmail.com> (https://github.com/wcastand)",
   "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon --ignore db.json --ignore client.js --ignore node_modules/ --ignore pages/ --ignore c/ --ignore .next/ server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
   "dependencies": {
+    "emotion": "^9.2.12",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "graphql-request": "^1.8.2",
+    "graphql-tag": "^2.10.0",
     "isomorphic-fetch": "^2.2.1",
+    "lowdb": "^1.0.0",
+    "morgan": "^1.9.1",
     "next": "^7.0.2",
     "react": "16.7.0-alpha.0 - next",
-    "react-dom": "16.7.0-alpha.0 - next"
+    "react-cache": "^2.0.0-alpha.1",
+    "react-dom": "16.7.0-alpha.0 - next",
+    "react-emotion": "^9.2.12",
+    "shortid": "^2.2.14"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0",
+    "nodemon": "^1.18.6"
   }
 }
